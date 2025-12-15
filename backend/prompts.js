@@ -23,9 +23,9 @@ Your task:
 7. Format the answer as a numbered list, one step per line.
 
 Example format:
-1. Osiągnij reputację Egzalted z fakcją X
+1. Osiągnij reputację Exalted z frakcją X
 2. Zbierz Y monet/waluty Z
-3. Złóż questę u NPC w mieście A
+3. Oddaj quest u NPC w mieście A
 4. Wejdź do dungeonu B na trudności C
 5. Pokonaj bossa D
 6. Odbierz mounta u NPC E
@@ -57,7 +57,7 @@ Your task:
 Example format:
 1. Osiągnij poziom X
 2. Odblokuj dostęp do obszaru/mapy A
-3. Złóż questę "Nazwa" u NPC B
+3. Oddaj quest "Nazwa" u NPC B
 4. Odbierz zabawkę z dropa w dungeonie/raidzie C
 5. Albo kup od vendora D za Y monet
 
@@ -88,7 +88,7 @@ Your task:
 Example format:
 1. Odblokuj dostęp do strefy/eventu X
 2. Zbierz walutę Y lub osiągnij achievement Z
-3. Złóż questę u NPC A
+3. Oddaj quest u NPC A
 4. Pokonaj przeciwnika w Pet Battle
 5. Odbierz peta z dropa/od vendora B
 
@@ -120,7 +120,7 @@ Example format:
 1. Osiągnij poziom X
 2. Ukończ achievement A lub quest chain B
 3. Zbierz reputację do poziomu C u fakcji D
-4. Zbierz walutę E z verschiedener content
+4. Zbierz walutę E z różnego rodzaju contentu
 5. Kup element od vendora F za zebraną walutę
 6. Powtórz dla każdego elementu setu (jeśli dotyczy)
 
