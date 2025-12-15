@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoW Collection Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>⚔️ WoW Collection Helper</h1>
+            <p class="subtitle">Szybkie instrukcje, jak zdobyć mounty, pety, zabawki i ozdoby</p>
+        </header>
+
+        <main class="main">
+            <section class="search-section">
+                <form id="guideForm" class="form">
+                    <!-- Pole wejściowe: nazwa lub link -->
+                    <div class="form-group">
+                        <label for="itemInput">Nazwa lub link (Wowhead / WarcraftMounts)</label>
+                        <input 
+                            type="text" 
+                            id="itemInput" 
+                            placeholder="np. Invincible's Reins, Mount z eventu lub link..." 
+                            required
+                        >
+                    </div>
+
+                    <!-- Dropdown: typ zasobu -->
+                    <div class="form-group">
+                        <label for="typeSelect">Typ zasobu</label>
+                        <select id="typeSelect" required>
+                            <option value="">-- Wybierz --</option>
+                            <option value="mount">Mount</option>
+                            <option value="toy">Toy (Zabawka)</option>
+                            <option value="pet">Pet (Pupil)</option>
+                            <option value="decor">Decor (Kosmetyka / Transmog)</option>
+                        </select>
+                    </div>
+
+                    <!-- Przycisk wysłania -->
+                    <button type="submit" class="btn btn-primary">🔍 Sprawdź</button>
+                </form>
+            </section>
+
+            <!-- Spinner / Stan ładowania -->
+            <div id="loadingSpinner" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Szukam informacji w Wowhead...</p>
+            </div>
+
+            <!-- Wyniki -->
+            <section id="resultsSection" class="results-section hidden">
+                <div class="results-card">
+                    <h2>📋 Kroki do zdobycia</h2>
+                    <div id="resultsList" class="results-list">
+                        <!-- Wyniki będą tutaj wstawione dynamicznie -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Błąd -->
+            <div id="errorMessage" class="error-message hidden"></div>
+        </main>
+
+        <footer class="footer">
+            <p>WoW Collection Helper v1.0 | Projekt dla graczy WoW</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
