@@ -1,18 +1,19 @@
 {
   "name": "wow-collection-helper-backend",
   "version": "1.0.0",
-  "description": "Backend API for WoW Collection Helper",
+  "description": "Backend API for WoW Collection Helper - powered by Google Gemini",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "keywords": ["wow", "guide", "api"],
+  "keywords": ["wow", "guide", "api", "gemini"],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "@google/genai": "^0.0.1"
   }
 }

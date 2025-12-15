@@ -1,11 +1,12 @@
 // ===========================
 // WOW COLLECTION HELPER - PROMPT BUILDERS
+// (bez zmian – współpracuje z każdym AI)
 // ===========================
 
 /**
  * Buduje prompt dla mountów
  * @param {string} input - nazwa lub URL mounta
- * @returns {string} - prompt do wysłania do AI
+ * @returns {string} - prompt do wysłania do Gemini
  */
 function buildMountPrompt(input) {
     return `
@@ -37,7 +38,7 @@ Respond ONLY with the numbered list. No extra text, no apologies.
 /**
  * Buduje prompt dla zabawek (toys)
  * @param {string} input - nazwa lub URL zabawki
- * @returns {string} - prompt do wysłania do AI
+ * @returns {string} - prompt do wysłania do Gemini
  */
 function buildToyPrompt(input) {
     return `
@@ -68,7 +69,7 @@ Respond ONLY with the numbered list. No extra text, no apologies.
 /**
  * Buduje prompt dla petów
  * @param {string} input - nazwa lub URL peta
- * @returns {string} - prompt do wysłania do AI
+ * @returns {string} - prompt do wysłania do Gemini
  */
 function buildPetPrompt(input) {
     return `
@@ -99,7 +100,7 @@ Respond ONLY with the numbered list. No extra text, no apologies.
 /**
  * Buduje prompt dla przedmiotów kosmetycznych/dekoracyjnych
  * @param {string} input - nazwa lub URL przedmiotu
- * @returns {string} - prompt do wysłania do AI
+ * @returns {string} - prompt do wysłania do Gemini
  */
 function buildDecorPrompt(input) {
     return `
