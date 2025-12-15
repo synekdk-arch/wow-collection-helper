@@ -13,13 +13,13 @@ Szybka aplikacja webowa pomagająca graczom World of Warcraft szybko uzyskać ko
 
 wow-collection-helper/
 ├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
+│ ├── index.html # Główna strona HTML
+│ ├── style.css # Stylowanie (responsywny design)
+│ └── script.js # Logika frontendu (fetch do API)
 ├── backend/
-│   ├── server.js
-│   ├── prompts.js
-│   └── package.json
-├── README.md
-└── .gitignore
-
+│ ├── server.js # Serwer Express + logika API
+│ ├── prompts.js # Buildery promptów dla każdego typu
+│ ├── package.json # Zależności (Express, CORS, dotenv)
+│ └── .env # Konfiguracja (klucz API)
+├── README.md # Ten plik
+└── .gitignore # Ignoruj node_modules i .env
