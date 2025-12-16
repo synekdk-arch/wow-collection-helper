@@ -201,6 +201,47 @@ app.get('/', (req, res) => {
 });
 
 /**
+ * POST /api/validate
+ * Validate if we can fetch data for a given item
+ */
+app.post('/api/validate', async (req, res) => {
+    try {
+        const { input, type } = req.body;
+        
+        if (!input) {
+            return res.status(400).json({
+                error: 'Missing input field',
+                valid: false
+            });
+        }
+        
+        // Fetch item data
+        const itemData = await fetchItemData(input, type || 'unknown');
+        
+        // Check if data is available
+        const hasWowheadData = itemData.sources?.some(s => s.source === 'wowhead' && s.dataAvailable);
+        const hasItemId = itemData.sources?.some(s => s.id);
+        
+        res.json({
+            valid: true,
+            hasWowheadData,
+            hasItemId,
+            itemData,
+            canProcess: true,
+            message: hasItemId ? 'Item ID found - can fetch detailed data' : 'Will use AI search'
+        });
+        
+    } catch (error) {
+        console.error('Validation error:', error);
+        res.status(500).json({
+            error: 'Validation failed',
+            valid: false,
+            message: error.message
+        });
+    }
+});
+
+/**
  * GET /health
  * Health check endpoint (dla hostingu)
  */
