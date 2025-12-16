@@ -1,0 +1,42 @@
+# Render.com Blueprint for WoW Collection Helper
+# This file defines the infrastructure for deploying the application on Render.com
+
+services:
+  # Backend API Service
+  - type: web
+    name: wow-collection-backend
+    runtime: node
+    env: node
+    region: oregon # Change to your preferred region
+    plan: free # Use 'starter' or higher for production
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: GEMINI_API_KEY
+        sync: false # This must be set manually in Render dashboard for security
+      - key: MODEL_NAME
+        value: gemini-2.5-flash
+    healthCheckPath: /health
+    
+  # Frontend Static Site
+  - type: web
+    name: wow-collection-frontend
+    runtime: static
+    env: static
+    buildCommand: echo "Static site - no build needed"
+    staticPublishPath: ./frontend
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+# Environment Groups (optional - can be used to share env vars)
+# Note: For sensitive data like API keys, always set them manually in the Render dashboard

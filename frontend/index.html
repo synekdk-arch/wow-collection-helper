@@ -27,16 +27,36 @@
                         >
                     </div>
 
-                    <!-- Dropdown: typ zasobu -->
+                    <!-- Drag & Drop: typ zasobu -->
                     <div class="form-group">
-                        <label for="typeSelect">Typ zasobu</label>
-                        <select id="typeSelect" required>
-                            <!-- <option value="">-- Wybierz --</option> -->
-                            <option value="mount">Mount</option>
-                            <!-- <option value="toy">Toy (Zabawka)</option>
-                            <option value="pet">Pet (Pupil)</option>
-                            <option value="decor">Decor (Kosmetyka / Transmog)</option> -->
-                        </select>
+                        <label for="typeSelect">Typ zasobu <span class="hint">(kliknij lub przeciągnij)</span></label>
+                        <div id="typeSelector" class="type-selector">
+                            <div class="type-option" data-type="mount" draggable="true">
+                                <div class="type-icon">🐴</div>
+                                <div class="type-label">Mount</div>
+                                <div class="type-desc">Wierzchowce</div>
+                            </div>
+                            <div class="type-option" data-type="toy" draggable="true">
+                                <div class="type-icon">🎮</div>
+                                <div class="type-label">Toy</div>
+                                <div class="type-desc">Zabawki</div>
+                            </div>
+                            <div class="type-option" data-type="pet" draggable="true">
+                                <div class="type-icon">🐾</div>
+                                <div class="type-label">Pet</div>
+                                <div class="type-desc">Pupile</div>
+                            </div>
+                            <div class="type-option" data-type="decor" draggable="true">
+                                <div class="type-icon">✨</div>
+                                <div class="type-label">Transmog</div>
+                                <div class="type-desc">Kosmetyka</div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="typeSelect" name="type" value="mount" required>
+                        <div id="selectedType" class="selected-type">
+                            <span class="selected-label">Wybrano:</span>
+                            <span class="selected-value">🐴 Mount</span>
+                        </div>
                     </div>
 
                     <!-- Przycisk wysłania -->
@@ -47,8 +67,18 @@
             <!-- Spinner / Stan ładowania -->
             <div id="loadingSpinner" class="loading hidden">
                 <div class="spinner"></div>
-                <p>Szukam informacji w Wowhead...</p>
+                <p id="loadingText">Szukam informacji w Wowhead...</p>
             </div>
+
+            <!-- Data Preview Section -->
+            <section id="dataPreview" class="data-preview hidden">
+                <div class="preview-card">
+                    <h3>📦 Znalezione dane</h3>
+                    <div id="previewContent" class="preview-content">
+                        <!-- Item preview will be inserted here -->
+                    </div>
+                </div>
+            </section>
 
             <!-- Wyniki -->
             <section id="resultsSection" class="results-section hidden">
@@ -56,6 +86,9 @@
                     <h2>📋 Kroki do zdobycia</h2>
                     <div id="resultsList" class="results-list">
                         <!-- Wyniki będą tutaj wstawione dynamicznie -->
+                    </div>
+                    <div id="metadata" class="metadata hidden">
+                        <!-- Metadata will be shown here -->
                     </div>
                 </div>
             </section>
