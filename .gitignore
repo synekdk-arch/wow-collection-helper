@@ -26,3 +26,7 @@ npm-debug.log*
 dist/
 build/
 
+# Documentation files (auto-generated)
+*.md
+!README.md
+
