@@ -27,7 +27,6 @@ services:
     name: wow-collection-frontend
     runtime: static
     env: static
-    region: oregon # Change to your preferred region
     buildCommand: echo "Static site - no build needed"
     staticPublishPath: ./frontend
     headers:
